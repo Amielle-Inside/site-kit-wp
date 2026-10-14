@@ -230,6 +230,9 @@ final class Screens {
 	 * @return Screen|null Screen instance if available, otherwise null;
 	 */
 	public function get_screen( $hook_suffix ) {
+		if ( null === $hook_suffix ) {
+			$hook_suffix = '';
+		}
 		return isset( $this->screens[ $hook_suffix ] ) ? $this->screens[ $hook_suffix ] : null;
 	}
 
